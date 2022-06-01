@@ -10,6 +10,6 @@ const RandomColor = Math.floor(Math.random() * 16777215).toString(16); // Get a 
 
 document.body.style.backgroundColor = "#" + RandomColor;
 
-const bodyChildren = document.body.children;
+const bodyChildren = document.body.children; // target all children of the body
 
 console.log(bodyChildren);
