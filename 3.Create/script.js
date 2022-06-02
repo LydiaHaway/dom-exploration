@@ -1,6 +1,6 @@
 document.body.onload = addSection;
 
-const array = ["Marlène", "Sebastien", "Louis", "Quentin", "Lydia"];
+const array = ["Sebastien", "Louis", "Marlène", "Quentin", "Lydia"];
 
 function randomName(array) {
   return array.sort(() => Math.random() - 0.5);
