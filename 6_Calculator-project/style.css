@@ -32,3 +32,15 @@ button {
 button:hover {
   background-color: lightgreen;
 }
+
+@media screen and (max-width: 520px) {
+  .calculator {
+    width: 95%;
+    padding: 0;
+  }
+
+  button {
+    width: 25%;
+    margin: auto;
+  }
+}
