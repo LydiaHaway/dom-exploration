@@ -1,8 +1,12 @@
 const main = document.querySelector("main");
 
+let calculator = document.createElement("section");
+calculator.setAttribute("class", "calculator");
+main.appendChild(calculator);
+
 let createResult = document.createElement("h3");
 createResult.setAttribute("id", "result");
-main.appendChild(createResult);
+calculator.appendChild(createResult);
 
 //__________________________________________
 
@@ -58,7 +62,7 @@ for (i = 0; i < array.length; i++) {
   let createButton = document.createElement("button");
   createButton.setAttribute("class", "calculatorButton");
   createButton.setAttribute("id", array[i]);
-  main.appendChild(createButton);
+  calculator.appendChild(createButton);
   let button = document.createTextNode(arrayText[i]);
   createButton.appendChild(button);
 }
