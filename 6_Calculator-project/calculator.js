@@ -29,29 +29,6 @@ const array = [
   "-",
   0,
   ".",
-  " ",
-  "+",
-];
-
-const arrayText = [
-  "(",
-  ")",
-  "%",
-  "C",
-  7,
-  8,
-  9,
-  "/",
-  4,
-  5,
-  6,
-  "*",
-  1,
-  2,
-  3,
-  "-",
-  0,
-  ".",
   "=",
   "+",
 ];
@@ -63,7 +40,7 @@ for (i = 0; i < array.length; i++) {
   createButton.setAttribute("class", "calculatorButton");
   createButton.setAttribute("id", array[i]);
   calculator.appendChild(createButton);
-  let button = document.createTextNode(arrayText[i]);
+  let button = document.createTextNode(array[i]);
   createButton.appendChild(button);
 }
 
@@ -75,17 +52,16 @@ let result = document.getElementById("result");
 let clear = document.getElementById("C");
 clear.setAttribute("class", "clear");
 
-let equal = document.getElementById(" ");
+let equal = document.getElementById("=");
 equal.setAttribute("class", "equal");
+equal.setAttribute("id", " ");
 
 //__________________________________________
 
 buttons.forEach((button) => {
-  if (buttons.id != "equal") {
-    button.addEventListener("click", (e) => {
-      result.textContent += e.target.id;
-    });
-  }
+  button.addEventListener("click", (e) => {
+    result.textContent += e.target.id;
+  });
 });
 
 clear.addEventListener("click", () => {
