@@ -25,6 +25,29 @@ const array = [
   "-",
   0,
   ".",
+  " ",
+  "+",
+];
+
+const arrayText = [
+  "(",
+  ")",
+  "%",
+  "C",
+  7,
+  8,
+  9,
+  "/",
+  4,
+  5,
+  6,
+  "*",
+  1,
+  2,
+  3,
+  "-",
+  0,
+  ".",
   "=",
   "+",
 ];
@@ -36,7 +59,7 @@ for (i = 0; i < array.length; i++) {
   createButton.setAttribute("class", "calculatorButton");
   createButton.setAttribute("id", array[i]);
   main.appendChild(createButton);
-  let button = document.createTextNode(array[i]);
+  let button = document.createTextNode(arrayText[i]);
   createButton.appendChild(button);
 }
 
@@ -48,8 +71,7 @@ let result = document.getElementById("result");
 let clear = document.getElementById("C");
 clear.setAttribute("class", "clear");
 
-let equal = document.getElementById("=");
-equal.setAttribute("id", "equal");
+let equal = document.getElementById(" ");
 equal.setAttribute("class", "equal");
 
 //__________________________________________
@@ -66,4 +88,10 @@ clear.addEventListener("click", () => {
   result.textContent = "";
 });
 
-equal.addEventListener("click", () => {});
+function computeResult(str) {
+  return Function("return " + str)();
+}
+
+equal.addEventListener("click", () => {
+  result.textContent = computeResult(result.textContent);
+});
