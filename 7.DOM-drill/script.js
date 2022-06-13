@@ -1,7 +1,7 @@
 let list = document.querySelector("ul");
 
 let faf = document.querySelector("ul :nth-child(6)");
-faf.classList.add(".important");
+faf.classList.add("important");
 let first = list.firstChild;
 
 let movies = list.childNodes;
@@ -34,6 +34,11 @@ document.body.insertBefore(div, list);
 let select = document.createElement("select");
 div.appendChild(select);
 
+let optionAll = document.createElement("option");
+select.appendChild(optionAll);
+let textAll = document.createTextNode("All franchises");
+optionAll.appendChild(textAll);
+
 let optionImportant = document.createElement("option");
 select.appendChild(optionImportant);
 let text1 = document.createTextNode("Important franchises");
@@ -48,8 +53,33 @@ const option = document.querySelector("select");
 
 option.addEventListener("change", () => {
   let i = option.value;
+  if (i == "All franchises") {
+    movies.forEach((movie) => {
+      if (movie.nodeType === 1) {
+        movie.style.visibility = "visible";
+      }
+    });
+  }
   if (i == "Important franchises") {
+    movies.forEach((movie) => {
+      if (movie.nodeType === 1) {
+        if (movie.classList != "important") {
+          movie.style.visibility = "hidden";
+        } else {
+          movie.style.visibility = "visible";
+        }
+      }
+    });
   }
   if (i == "Normal franchises") {
+    movies.forEach((movie) => {
+      if (movie.nodeType === 1) {
+        if (movie.classList != "") {
+          movie.style.visibility = "hidden";
+        } else {
+          movie.style.visibility = "visible";
+        }
+      }
+    });
   }
 });
