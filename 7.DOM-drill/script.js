@@ -21,7 +21,7 @@ movies.forEach((movie) => {
     movie.addEventListener("click", () => {
       if (movie.lastChild.nodeValue === "Fast and Furious") {
         alert(
-          "The most important franchise ever, the story of DOM(inic) Toretto's family. It's not about car, it's about family."
+          "The most important franchise ever, the story of DOM(inic) Toretto's family. It's not about car, it's about family"
         );
       } else {
         alert(movie.lastChild.nodeValue);
