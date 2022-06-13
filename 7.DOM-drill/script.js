@@ -36,3 +36,20 @@ div.appendChild(select);
 
 let optionImportant = document.createElement("option");
 select.appendChild(optionImportant);
+let text1 = document.createTextNode("Important franchises");
+optionImportant.appendChild(text1);
+
+let optionNormale = document.createElement("option");
+select.appendChild(optionNormale);
+let text2 = document.createTextNode("Normal franchises");
+optionNormale.appendChild(text2);
+
+const option = document.querySelector("select");
+
+option.addEventListener("change", () => {
+  let i = option.value;
+  if (i == "Important franchises") {
+  }
+  if (i == "Normal franchises") {
+  }
+});
