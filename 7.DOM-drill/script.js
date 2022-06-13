@@ -13,6 +13,8 @@ movies.forEach((movie) => {
   }
 });
 
+//________________________________________________________________________
+
 movies.forEach((movie) => {
   if (movie.nodeType === 1) {
     console.log(movie.lastChild);
@@ -27,6 +29,8 @@ movies.forEach((movie) => {
     });
   }
 });
+
+//________________________________________________________________________
 
 let div = document.createElement("div");
 document.body.insertBefore(div, list);
@@ -78,6 +82,34 @@ option.addEventListener("change", () => {
           movie.style.visibility = "hidden";
         } else {
           movie.style.visibility = "visible";
+        }
+      }
+    });
+  }
+});
+
+//_______________________________________________________________
+
+document.addEventListener("keypress", (e) => {
+  if (e.key === "r") {
+    movies.forEach((movie) => {
+      if (movie.nodeType === 1) {
+        if (movie.classList != "important") {
+          for (let i = list.children.length; i >= 0; i--) {
+            list.appendChild(list.children[(Math.random() * i) | 1]);
+          }
+        }
+      }
+    });
+  }
+
+  if (e.key === "p") {
+    movies.forEach((movie) => {
+      if (movie.nodeType === 1) {
+        if (movie.classList == "important") {
+          const clone = movie.cloneNode(true);
+          clone.classList.remove("important");
+          list.insertBefore(clone, first);
         }
       }
     });
