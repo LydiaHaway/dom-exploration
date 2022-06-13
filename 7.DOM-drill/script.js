@@ -1,6 +1,7 @@
 let list = document.querySelector("ul");
 
 let faf = document.querySelector("ul :nth-child(6)");
+faf.classList.add(".important");
 let first = list.firstChild;
 
 let movies = list.childNodes;
@@ -26,3 +27,12 @@ movies.forEach((movie) => {
     });
   }
 });
+
+let div = document.createElement("div");
+document.body.insertBefore(div, list);
+
+let select = document.createElement("select");
+div.appendChild(select);
+
+let optionImportant = document.createElement("option");
+select.appendChild(optionImportant);
