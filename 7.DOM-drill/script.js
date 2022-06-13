@@ -9,5 +9,11 @@ movies.forEach((movie) => {
   if (movie.nodeType === 1) {
     list.removeChild(faf);
     list.insertBefore(faf, first);
+
+    console.log(movie.lastChild);
+
+    movie.addEventListener("click", () => {
+      alert(movie.lastChild.nodeValue);
+    });
   }
 });
