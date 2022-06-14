@@ -108,10 +108,8 @@ document.addEventListener("keypress", (e) => {
   if (e.key === "r") {
     movies.forEach((movie) => {
       if (movie.nodeType === 1) {
-        if (movie.classList != "important") {
-          for (let i = list.children.length; i >= 0; i--) {
-            list.appendChild(list.children[(Math.random() * i) | 1]);
-          }
+        for (let i = list.children.length; i >= 0; i--) {
+          list.appendChild(list.children[(Math.random() * i) | 1]);
         }
       }
     });
