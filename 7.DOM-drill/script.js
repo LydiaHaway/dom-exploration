@@ -97,9 +97,10 @@ function remove(a, b) {
 }
 
 console.log(list.children[2].isEqualNode(list.children[4]));
-
 remove(list.children[2], list.children[4]);
-remove(list.children[1], list.children[8]);
+
+console.log(list.children[2].isEqualNode(list.children[9]));
+remove(list.children[2], list.children[9]);
 
 //________________________________________________________________
 
