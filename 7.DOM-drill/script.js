@@ -90,6 +90,22 @@ option.addEventListener("change", () => {
 
 //_______________________________________________________________
 
+function remove(a, b) {
+  if (a.isEqualNode(b)) {
+    a.remove(b);
+  }
+}
+
+console.log(list.children[2].isEqualNode(list.children[4]));
+
+remove(list.children[2], list.children[4]);
+
+console.log(list.children[2].isEqualNode(list.children[9]));
+
+remove(list.children[2], list.children[9]);
+
+//________________________________________________________________
+
 document.addEventListener("keypress", (e) => {
   if (e.key === "r") {
     movies.forEach((movie) => {
