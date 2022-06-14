@@ -118,14 +118,7 @@ document.addEventListener("keypress", (e) => {
   }
 
   if (e.key === "p") {
-    movies.forEach((movie) => {
-      if (movie.nodeType === 1) {
-        if (movie.classList == "important") {
-          const clone = movie.cloneNode(true);
-          clone.classList.remove("important");
-          list.insertBefore(clone, first);
-        }
-      }
-    });
+    const clone = list.firstElementChild.cloneNode(true);
+    list.insertBefore(clone, first);
   }
 });
